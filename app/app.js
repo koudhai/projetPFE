@@ -33,12 +33,21 @@
                 data: { activeTab: 'account' }
             })
             .state('gateway', {
-                url: '/gateway',
+                url: '/account',
                 templateUrl: 'gateway/index.html',
                 controller: 'gateway.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'gateway' }
+            })
+            
+            .state('tendances', {
+                url: '/tendances',
+                templateUrl: 'tendances/index.html',
+                controller: 'tendances.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'tendances' }
             });
+            
     }
 
     function run($http, $rootScope, $window) {
@@ -60,4 +69,18 @@
             angular.bootstrap(document, ['app']);
         });
     });
+    
 })();
+'use strict';
+angular.module( 'myApp', [
+'ngRoute',
+'myApp.filters',
+'myApp.services',
+'myApp.directives',
+'myApp.controllers'
+])
+.config(['$routeProvider', function( $routeProvider) {
+$routeProvider.when( '/dashboard', {templateUrl: 'dashboard/index.html', controller: 'index.controller'});
+$routeProvider.when( '/stays', {templateUrl: 'stays/index.html', controller: 'index.controller'});
+$routeProvider.otherwise({ redirectTo: '/dashboard' });
+}]);

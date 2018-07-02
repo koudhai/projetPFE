@@ -1,8 +1,31 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="zxx" class="no-js">
 <head>
-    <meta charset="utf-8" />
-    <title>MEAN Stack User Registration and Login Example Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="img/fav.png">
+		<!-- Author Meta -->
+		<meta name="author" content="codepixer">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+    <title>Cynapsys platforme</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+        <!--
+        CSS
+        ============================================= -->
+        <link rel="stylesheet" href="css/linearicons.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
+        <link rel="stylesheet" href="css/nice-select.css">					
+        <link rel="stylesheet" href="css/animate.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="stylesheet" href="css/main.css">
 
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
     <link href="app-content/app.css" rel="stylesheet" />
@@ -12,9 +35,10 @@
     <header>
         <ul class="nav nav-tabs">
             <li ng-class="{active: activeTab === 'home'}"><a ui-sref="home">Home</a></li>
-            <li ng-class="{active: activeTab === 'dashboard'}"><a ui-sref="dashboard">Dashboard</a></li>
+            <li ng-class="{active: activeTab === 'tendances'}"><a ui-sref="tendances">Dashboard</a></li>
+            <li ng-class="{active: activeTab === 'account'}"><a ui-sref="account">géolocalisation </a></li>
+            <li ng-class="{active: activeTab === 'dashboard'}"><a ui-sref="dashboard">prametres profil</a></li>
             <li ng-class="{active: activeTab === 'gateway'}"><a ui-sref="gateway">gateway configuration</a></li>
-            <li ng-class="{active: activeTab === 'account'}"><a ui-sref="account">Account</a></li>
             <li><a href="/login" target="_self">Logout</a></li>
         </ul>
         <div class="flash-message" ng-if="flash">

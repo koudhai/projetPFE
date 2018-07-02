@@ -11,6 +11,14 @@ router.put('/:_id', updateUser);
 router.delete('/:_id', deleteUser);
 
 module.exports = router;
+var mongo = require('mongoskin');
+var fs = require('fs');
+var db = mongo.db("mongodb://localhost:27017/mean-stack-registration-login-example", { native_parser: true });
+
+db.collection('users').find({}).toArray(
+    function (err, docs) {
+        s=docs;
+    });
 
 function authenticateUser(req, res) {
     userService.authenticate(req.body.username, req.body.password)
@@ -39,17 +47,8 @@ function registerUser(req, res) {
 }
 
 function getCurrentUser(req, res) {
-    userService.getById(req.user.sub)
-        .then(function (user) {
-            if (user) {
-                res.send(user);
-            } else {
-                res.sendStatus(404);
-            }
-        })
-        .catch(function (err) {
-            res.status(400).send(err);
-        });
+  res.send(s);
+        
 }
 
 function updateUser(req, res) {
